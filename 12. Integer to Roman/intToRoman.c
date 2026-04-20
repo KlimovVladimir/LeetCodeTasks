@@ -15,18 +15,6 @@ char* intToRoman(int num) {
 
         int digit = num / (int)pow(10, power);
 
-        if (power == 3) {
-            for (int i = 0; i < digit; i++) {
-                *curr = *oneList;
-                curr++;
-            }
-            num -= digit * (int)pow(10, power);
-            power--;
-            oneList++;
-            fiveList++;
-            continue;
-        }
-
         if (digit == 5) {
             *curr = *fiveList;
             curr++;
