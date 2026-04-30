@@ -10,7 +10,9 @@ int firstMissingPositive(int* nums, int numsSize) {
     qsort(nums, numsSize, sizeof(nums[0]), comp);
 
     for (int i = 0; i < numsSize; i++) {
-        if (nums[i] == result) {
+        if (nums[i] > result)
+            return result;
+        else if (nums[i] == result) {
             result = nums[i] + 1;
         }
     }
